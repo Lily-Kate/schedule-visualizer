@@ -34,7 +34,8 @@ class TimeSlotHandler extends TimeSlotCombiner<TimeSlot> {
     protected TimeSlot combineWithFirstUnassignedSecondAssigned(List<Weekday> weekdays2, Integer slotnum2) {
         if (weekdays2.getFirst().isTR()) {
             weekdays2 = Weekday.TR();
-        } if(!weekdays2.getFirst().isTR()) {
+        }
+        if(!weekdays2.getFirst().isTR()) {
             weekdays2 = Weekday.MWF();
         }
         return ef.makeHCTimeSlot(weekdays2, slotnum2);
